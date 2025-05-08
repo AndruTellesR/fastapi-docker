@@ -40,7 +40,7 @@ class Note(Base):
 
 
 # Creamos todas las tablas en la base de datos
-# Esto se ejecuta al iniciar la aplicación y crea las tablas si no existen
+# se ejecuta al iniciar la aplicación y crea las tablas si no existen
 Base.metadata.create_all(bind=engine)
 
 
