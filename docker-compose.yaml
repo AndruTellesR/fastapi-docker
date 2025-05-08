@@ -4,13 +4,18 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./:/app  
+      - ./:/app
+      - notes_data:/app/data
     environment:
       - HOLA=MUNDO
+      - DB_PATH=/app/data/notes.db
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     networks:
       - redlocal
 
+volumes:
+  notes_data:
+    # Named volume for database persistence
+
 networks:
   redlocal:
-
